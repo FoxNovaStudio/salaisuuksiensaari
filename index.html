@@ -2,15 +2,12 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body,#app{background:#f0f7f4;min-height:100vh;}
-#app{padding:1rem;font-family:system-ui,sans-serif;color:#1a2e25;max-width:680px;margin:0 auto;}
+#app{padding:1rem;font-family:system-ui,sans-serif;color:#1a2e25;}
 .screen{display:none;}.screen.active{display:block;}
 
-/* FRONT PAGE */
 #fp-hero{background:linear-gradient(135deg,#1D9E75 0%,#185FA5 100%);border-radius:16px;padding:1.5rem 1.25rem;margin-bottom:1.25rem;color:#fff;}
 #fp-title{font-size:26px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:10px;}
 #fp-tagline{font-size:13px;opacity:0.85;}
-
-/* Profile slots */
 .profiles-grid{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1rem;}
 .profile-slot{width:110px;height:110px;border-radius:14px;border:2px dashed #aacfbc;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:all 0.15s;position:relative;}
 .profile-slot:hover{border-color:#1D9E75;background:#e8f8f2;transform:scale(1.03);}
@@ -19,12 +16,10 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 .avatar{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;}
 .profile-name{font-size:12px;font-weight:600;color:#1a2e25;text-align:center;max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .profile-role-lbl{font-size:10px;color:#6b9080;}
-.remove-profile{position:absolute;top:5px;right:7px;font-size:13px;color:#aaa;cursor:pointer;line-height:1;}
+.remove-profile{position:absolute;top:5px;right:7px;font-size:13px;color:#aaa;cursor:pointer;}
 .remove-profile:hover{color:#c0392b;}
 .add-btn{font-size:28px;color:#1D9E75;line-height:1;}
 .add-label{font-size:11px;color:#6b9080;font-weight:500;}
-
-/* Add form */
 .add-form{background:#fff;border:1px solid #d4e9de;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;box-shadow:0 2px 8px rgba(29,158,117,0.08);}
 .add-form h3{font-size:13px;font-weight:600;color:#1a2e25;margin-bottom:10px;}
 .form-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
@@ -41,29 +36,19 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 .form-btns button{padding:7px 16px;border-radius:8px;border:none;cursor:pointer;font-size:12px;font-weight:600;}
 .btn-add{background:#1D9E75;color:#fff;}.btn-add:hover{background:#178a65;}
 .btn-cancel{background:#e8f0eb;color:#4a7060;}.btn-cancel:hover{background:#d4e9de;}
-
-/* Start button */
-.start-btn{width:100%;padding:12px;border-radius:12px;border:none;background:linear-gradient(135deg,#1D9E75,#185FA5);font-size:14px;font-weight:700;color:#fff;cursor:pointer;margin-bottom:1.5rem;box-shadow:0 4px 12px rgba(29,158,117,0.3);transition:opacity 0.15s;}
-.start-btn:hover:not(:disabled){opacity:0.92;}
-.start-btn:disabled{opacity:0.35;cursor:not-allowed;}
-
-/* Rules sections */
+.start-btn{width:100%;padding:12px;border-radius:12px;border:none;background:linear-gradient(135deg,#1D9E75,#185FA5);font-size:14px;font-weight:700;color:#fff;cursor:pointer;margin-bottom:1.5rem;box-shadow:0 4px 12px rgba(29,158,117,0.3);}
+.start-btn:hover:not(:disabled){opacity:0.92;}.start-btn:disabled{opacity:0.35;cursor:not-allowed;}
 .rules-block{background:#fff;border-radius:12px;padding:1rem 1.25rem;margin-bottom:0.85rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
 .rules-h1{font-size:16px;font-weight:700;color:#1a2e25;margin-bottom:0.6rem;display:flex;align-items:center;gap:8px;}
-.rules-h1::after{content:'';flex:1;height:1px;background:#e0ede8;margin-left:6px;}
 .rules-h2{font-size:13px;font-weight:600;color:#185FA5;margin:0.75rem 0 0.3rem;}
 .rules-p{font-size:12px;color:#4a6055;line-height:1.7;margin-bottom:0.4rem;}
 .rules-ul{padding-left:1.1rem;margin-bottom:0.4rem;}
 .rules-ul li{font-size:12px;color:#4a6055;line-height:1.7;margin-bottom:2px;}
 .tip-box{background:linear-gradient(135deg,#e8f8f2,#e0f0fb);border-left:3px solid #1D9E75;border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:12px;color:#1a4030;line-height:1.6;}
-.warn-box{background:#fff8e8;border-left:3px solid #e8a020;border-radius:0 8px 8px 0;padding:8px 12px;margin:8px 0;font-size:12px;color:#6b4010;line-height:1.6;}
 .role-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:8px 0;}
 .role-card{border-radius:10px;padding:10px 12px;background:#f8fcfb;border:1px solid #d4e9de;}
 .role-card-name{font-size:12px;font-weight:700;margin-bottom:4px;}
 .role-card-desc{font-size:11px;color:#4a6055;line-height:1.5;}
-.divider{height:1px;background:#e0ede8;margin:1rem 0;}
-
-/* Setup */
 .setup-section{background:#fff;border-radius:12px;padding:1rem 1.25rem;margin-bottom:0.85rem;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
 .setup-section h3{font-size:14px;font-weight:700;color:#1a2e25;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #e0ede8;}
 .role-pick-card{border:2px solid #e0ede8;border-radius:10px;padding:8px 10px;cursor:pointer;transition:all 0.15s;background:#f8fcfb;}
@@ -81,17 +66,24 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 .wl-opt.sel{background:#185FA5;border-color:#185FA5;color:#fff;box-shadow:0 2px 8px rgba(24,95,165,0.35);}
 .starter-badge{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:10px;font-size:13px;background:#f0f7f4;border:1px solid #d4e9de;}
 .proceed-btn{width:100%;padding:12px;border-radius:12px;background:linear-gradient(135deg,#1D9E75,#185FA5);color:#fff;border:none;font-size:14px;font-weight:700;cursor:pointer;margin-top:6px;box-shadow:0 4px 12px rgba(29,158,117,0.3);}
-.proceed-btn:hover:not(:disabled){opacity:0.92;}.proceed-btn:disabled{opacity:0.35;cursor:not-allowed;}
+.proceed-btn:disabled{opacity:0.35;cursor:not-allowed;}
 
-/* GAME */
+/* GAME - full width board */
+#screen-game{display:none;}
+#screen-game.active{display:block;}
 #gs-header{display:flex;align-items:center;gap:8px;margin-bottom:6px;padding:8px 12px;background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
 #back-btn{font-size:11px;padding:4px 10px;border-radius:7px;border:1px solid #d4e9de;background:#f8fcfb;color:#4a6055;cursor:pointer;font-weight:600;}
-#back-btn:hover{background:#e8f8f2;}
 #gs-title{font-size:14px;font-weight:700;color:#1a2e25;}
-#board{display:flex;flex-direction:column;align-items:center;gap:3px;margin:0.3rem auto;}
-.board-row{display:flex;gap:3px;justify-content:center;}
-.tile{width:62px;height:62px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.12s;border:2px solid transparent;text-align:center;line-height:1.2;padding:3px;position:relative;}
-.tile:hover{transform:scale(1.07);}
+
+/* Board: full width, tiles scale to fill */
+#board-wrap{width:100%;margin:0.4rem 0;}
+#board{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;}
+.board-row{display:flex;justify-content:center;width:100%;}
+
+/* Tile size calculated via CSS: 6 tiles + 5 gaps across max row, fill 100% */
+:root{--tile:calc((100vw - 2rem - 10px) / 6);--gap:calc(var(--tile)*0.05);}
+.tile{width:var(--tile);height:var(--tile);border-radius:calc(var(--tile)*0.12);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.12s;border:2px solid transparent;text-align:center;line-height:1.2;padding:2px;position:relative;margin:calc(var(--gap)/2);}
+.tile:hover{transform:scale(1.05);}
 .tile.dry{background:linear-gradient(135deg,#7ecba0,#4db880);}
 .tile.flooded{background:linear-gradient(135deg,#5aade8,#2e8fd4);border:3px solid #1a5fa0!important;}
 .tile.moveable{border:2.5px dashed #f5c518!important;box-shadow:0 0 0 1px #f5c518;}
@@ -100,11 +92,12 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 .tile.heliable{border:2.5px dashed #9B8FE8!important;}
 .tile.guide-dest{border:2.5px dashed #E85080!important;}
 .tile.glow{box-shadow:0 0 0 3px #FFD700,0 0 8px rgba(255,215,0,0.5);}
-.tile-name{font-size:7px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.4);margin-top:14px;}
+.tile-name{font-size:calc(var(--tile)*0.11);font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.4);margin-top:calc(var(--tile)*0.22);}
 .tile-dots{display:flex;justify-content:center;gap:2px;margin-top:2px;}
-.tdot{width:9px;height:9px;border-radius:50%;display:inline-block;border:1.5px solid rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.2);}
-.flood-badge{position:absolute;top:2px;right:3px;font-size:10px;}
-.treasure-badge{position:absolute;top:2px;left:3px;font-size:10px;}
+.tdot{width:calc(var(--tile)*0.13);height:calc(var(--tile)*0.13);border-radius:50%;display:inline-block;border:1.5px solid rgba(255,255,255,0.6);box-shadow:0 1px 2px rgba(0,0,0,0.2);}
+.flood-badge{position:absolute;top:2px;right:3px;font-size:calc(var(--tile)*0.16);}
+.treasure-badge{position:absolute;top:2px;left:3px;font-size:calc(var(--tile)*0.16);}
+
 #turn-bar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:#fff;border-radius:10px;padding:7px 12px;margin-bottom:4px;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
 #acts-pips{display:flex;gap:4px;align-items:center;}
 .act-pip{width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#1D9E75,#12846a);box-shadow:0 1px 3px rgba(29,158,117,0.4);}
@@ -119,7 +112,7 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 #actions{display:flex;gap:4px;flex-wrap:wrap;margin:4px 0;}
 #actions button{font-size:10px;padding:6px 10px;border-radius:8px;border:1.5px solid #d4e9de;background:#fff;color:#1a2e25;cursor:pointer;font-weight:600;transition:all 0.12s;}
 #actions button:hover{background:#e8f8f2;border-color:#1D9E75;}
-#actions button.active{background:linear-gradient(135deg,#185FA5,#1a4fa0);color:#fff;border-color:#185FA5;box-shadow:0 2px 6px rgba(24,95,165,0.3);}
+#actions button.active{background:linear-gradient(135deg,#185FA5,#1a4fa0);color:#fff;border-color:#185FA5;}
 #actions button.special-act{background:#f0ecff;border-color:#9B8FE8;color:#5840c0;}
 #actions button.used-today{opacity:0.35;cursor:not-allowed;}
 #hud{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0;}
@@ -136,17 +129,17 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 #log{background:#f8fcfb;border:1px solid #d4e9de;border-radius:8px;padding:5px 10px;font-size:10px;max-height:44px;overflow-y:auto;color:#4a6055;margin-top:4px;}
 #role-popup-bg{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:299;background:rgba(0,0,0,0.5);}
 #role-popup-bg.show{display:block;}
-#role-popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:300;background:#fff;border-radius:16px;padding:1.25rem 1.5rem;max-width:300px;width:90%;border:1px solid #d4e9de;box-shadow:0 12px 40px rgba(0,0,0,0.2);}
+#role-popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:300;background:#fff;border-radius:16px;padding:1.25rem 1.5rem;max-width:300px;width:90%;box-shadow:0 12px 40px rgba(0,0,0,0.2);}
 #role-popup.show{display:block;}
 #turn-banner{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:rgba(10,30,20,0.75);align-items:center;justify-content:center;}
 #turn-banner.show{display:flex;}
-#turn-banner-box{background:#fff;border-radius:20px;padding:2rem 2.5rem;text-align:center;max-width:320px;border:none;animation:popIn 0.3s ease;box-shadow:0 20px 60px rgba(0,0,0,0.35);}
+#turn-banner-box{background:#fff;border-radius:20px;padding:2rem 2.5rem;text-align:center;max-width:320px;animation:popIn 0.3s ease;box-shadow:0 20px 60px rgba(0,0,0,0.35);}
 @keyframes popIn{from{transform:scale(0.8);opacity:0;}to{transform:scale(1);opacity:1;}}
 #tba{font-size:52px;margin-bottom:8px;}#tbn{font-size:22px;font-weight:700;margin-bottom:4px;}
 #tbr{font-size:12px;color:#4a6055;margin-bottom:6px;}#tbcards{margin:8px 0;}
 #tb-progress-bar{height:4px;border-radius:2px;background:#e0ede8;margin-top:10px;overflow:hidden;}
 #tb-progress{height:100%;border-radius:2px;background:linear-gradient(90deg,#1D9E75,#185FA5);width:100%;}
-#event-banner{display:none;position:fixed;bottom:16px;left:16px;z-index:210;background:linear-gradient(135deg,#0d3a5c,#1a5080);color:#fff;padding:12px 16px;border-radius:12px;font-size:11px;text-align:left;max-width:260px;line-height:1.7;box-shadow:0 8px 24px rgba(0,0,0,0.35);white-space:pre-line;font-weight:500;}
+#event-banner{display:none;position:fixed;bottom:16px;left:16px;z-index:210;background:linear-gradient(135deg,#0d3a5c,#1a5080);color:#fff;padding:12px 16px;border-radius:12px;font-size:11px;max-width:260px;line-height:1.7;box-shadow:0 8px 24px rgba(0,0,0,0.35);white-space:pre-line;font-weight:500;}
 #event-banner.show{display:block;animation:evIn 0.3s ease;}
 @keyframes evIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 .end-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:50;align-items:center;justify-content:center;}
@@ -155,7 +148,6 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 .end-box h2{font-size:22px;font-weight:700;margin-bottom:0.4rem;}
 .end-box p{font-size:13px;color:#4a6055;margin-bottom:1rem;}
 .end-box button{padding:8px 20px;border-radius:9px;border:1.5px solid #d4e9de;background:#f0f7f4;cursor:pointer;font-size:13px;margin:4px;font-weight:600;}
-.end-box button:hover{background:#e8f8f2;}
 .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:100;align-items:center;justify-content:center;}
 .modal-overlay.show{display:flex;}
 #discard-modal{z-index:400;}
@@ -163,13 +155,12 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 .modal-box h3{font-size:14px;font-weight:700;color:#1a2e25;margin-bottom:8px;}
 .modal-sub{font-size:11px;color:#4a6055;margin-bottom:6px;}
 .modal-cards{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px;}
-.modal-card{padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all 0.12s;}
-.modal-card:hover{border-color:#185FA5;box-shadow:0 0 0 2px rgba(24,95,165,0.2);}
-.modal-card.sel{border-color:#185FA5;box-shadow:0 0 0 2px rgba(24,95,165,0.2);}
-.discard-card{padding:6px 10px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;border:2px solid transparent;display:inline-flex;align-items:center;gap:4px;margin:3px;transition:all 0.12s;}
+.modal-card{padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;border:2px solid transparent;}
+.modal-card:hover{border-color:#185FA5;}.modal-card.sel{border-color:#185FA5;}
+.discard-card{padding:6px 10px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;border:2px solid transparent;display:inline-flex;align-items:center;gap:4px;margin:3px;}
 .discard-card:hover{border-color:#c0392b;background:#fff0f0;}
 .modal-targets{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px;}
-.modal-target{padding:7px 13px;border-radius:8px;font-size:12px;cursor:pointer;border:2px solid #d4e9de;background:#f8fcfb;font-weight:600;transition:all 0.12s;}
+.modal-target{padding:7px 13px;border-radius:8px;font-size:12px;cursor:pointer;border:2px solid #d4e9de;background:#f8fcfb;font-weight:600;}
 .modal-target:hover{border-color:#185FA5;background:#e8f0fb;}
 .modal-target.sel{border-color:#185FA5;background:#deeafa;}
 .modal-btns{display:flex;gap:8px;margin-top:8px;}
@@ -177,7 +168,6 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 .modal-btns button.confirm{background:linear-gradient(135deg,#185FA5,#1a4fa0);color:#fff;}
 .modal-btns button.confirm:disabled{background:#d4e9de;color:#6b9080;cursor:not-allowed;}
 .modal-btns button.cancel-btn{background:#f0f7f4;color:#4a6055;border:1.5px solid #d4e9de;}
-.modal-btns button.co{background:linear-gradient(135deg,#e8a020,#c07010);color:#fff;}
 .wl-inline{display:flex;align-items:center;gap:3px;}
 .wl-ball{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;border:2px solid transparent;flex-shrink:0;}
 .wl-ball.empty{background:#e0ede8;border-color:#c8e0d4;color:#6b9080;}
@@ -199,8 +189,7 @@ body,#app{background:#f0f7f4;min-height:100vh;}
   <div class="modal-btns"><button class="cancel-btn" onclick="closeModal('give-modal')">Peruuta</button><button class="confirm" id="give-confirm-btn" onclick="confirmGive()" disabled>Anna</button></div>
 </div></div>
 <div class="modal-overlay" id="heli-modal"><div class="modal-box">
-  <h3>🚁 Helikopterikortti</h3>
-  <div class="modal-sub">Valitse siirrettävät pelaajat:</div>
+  <h3>🚁 Helikopterikortti</h3><div class="modal-sub">Valitse siirrettävät pelaajat:</div>
   <div class="modal-targets" id="heli-players"></div>
   <div class="modal-btns" style="margin-top:10px;">
     <button class="cancel-btn" onclick="cancelHeli()">Peruuta</button>
@@ -221,15 +210,12 @@ body,#app{background:#f0f7f4;min-height:100vh;}
 </div></div>
 
 <div id="app">
-<!-- FRONT -->
 <div id="screen-front" class="screen active">
   <div id="fp-hero">
     <div id="fp-title">🏝️ Salaisuuksien saari</div>
     <div id="fp-tagline">Yhteistyöpeli 2–4 pelaajalle — pelastakaa aarteet ennen kuin saari uppoaa!</div>
   </div>
-
   <div class="profiles-grid" id="profiles-grid"></div>
-
   <div class="add-form" id="add-form" style="display:none;">
     <h3>➕ Lisää pelaaja</h3>
     <div class="form-row"><input type="text" id="name-input" placeholder="Pelaajan nimi" maxlength="16"/></div>
@@ -242,47 +228,28 @@ body,#app{background:#f0f7f4;min-height:100vh;}
       <button class="btn-cancel" onclick="cancelAdd()">Peruuta</button>
     </div>
   </div>
-
   <button class="start-btn" id="start-btn" onclick="goSetup()" disabled>Jatka alkuvalmisteluihin →</button>
-
-  <div class="rules-block">
-    <div class="rules-h1">🎯 Tavoite</div>
-    <p class="rules-p">Kerää kaikki 4 aarretta → siirrä kaikki helikopterialueelle → pelaa helikopterikortti → voitto!</p>
-  </div>
+  <div class="rules-block"><div class="rules-h1">🎯 Tavoite</div><p class="rules-p">Kerää kaikki 4 aarretta → siirrä kaikki helikopterialueelle → pelaa helikopterikortti → voitto!</p></div>
   <div class="rules-block">
     <div class="rules-h1">🔄 Vuoro</div>
-    <ul class="rules-ul">
-      <li><strong>3 toimintoa</strong> — liiku, kuivaa, anna kortti, ota aarre</li>
-      <li><strong>Nosta 2 aarrekorttia</strong> — Vesi nousee! lasketaan nostoksi, ei korvauskorttia</li>
-      <li><strong>Nosta tulvakortteja</strong> — vedenpinnan mukaan</li>
-    </ul>
+    <ul class="rules-ul"><li><strong>3 toimintoa</strong> — liiku, kuivaa, anna kortti, ota aarre</li><li><strong>Nosta 2 aarrekorttia</strong> — Vesi nousee! lasketaan nostoksi, ei korvauskorttia</li><li><strong>Nosta tulvakortteja</strong> — vedenpinnan mukaan</li></ul>
     <div class="rules-h2">✋ Käsiraja: 5 korttia</div>
-    <p class="rules-p">Enintään <strong>5 korttia</strong> kädessä. Kaikki nostetut kortit lisätään ensin käteen, sitten valitset hylättävät itse — minkä tahansa kädestäsi.</p>
+    <p class="rules-p">Kaikki nostetut kortit lisätään ensin käteen, sitten valitset hylättävät itse — minkä tahansa kädestäsi.</p>
     <div class="tip-box">💡 Jos nostat 2 korttia ja kumpikin ylittää rajan, käsissä on hetkellisesti 7 — hylkäät kaksi peräkkäin.</div>
   </div>
   <div class="rules-block">
     <div class="rules-h1">🎭 Roolit</div>
     <div class="role-grid">
-      <div class="role-card"><div class="role-card-name" style="color:#185FA5;">🤿 Sukeltaja</div><div class="role-card-desc">Liiku suoraan (ei käänny) kaikkien peräkkäisten tulvivien läpi yhdellä toiminnolla. Vain 4 suuntaa.</div></div>
+      <div class="role-card"><div class="role-card-name" style="color:#185FA5;">🤿 Sukeltaja</div><div class="role-card-desc">Liiku suoraan (ei käänny) kaikkien peräkkäisten tulvivien läpi yhdellä toiminnolla.</div></div>
       <div class="role-card"><div class="role-card-name" style="color:#1D9E75;">🧭 Seikkailija</div><div class="role-card-desc">Liiku ja kuivaa myös diagonaalisesti (8 suuntaa).</div></div>
-      <div class="role-card"><div class="role-card-name" style="color:#c0392b;">⛏️ Pioneeri</div><div class="role-card-desc">Kuivaa max 2 laattaa yhdellä toiminnolla. 2 peräkkäin = 1 toiminto.</div></div>
+      <div class="role-card"><div class="role-card-name" style="color:#c0392b;">⛏️ Pioneeri</div><div class="role-card-desc">Kuivaa max 2 laattaa yhdellä toiminnolla.</div></div>
       <div class="role-card"><div class="role-card-name" style="color:#D4537E;">✉️ Lähetti</div><div class="role-card-desc">Anna aarrekortteja kenelle tahansa saarella.</div></div>
       <div class="role-card"><div class="role-card-name" style="color:#7F77DD;">🧿 Opas</div><div class="role-card-desc">Siirrä toista pelaajaa max 2 laattaa yhdellä toiminnolla.</div></div>
-      <div class="role-card"><div class="role-card-name" style="color:#BA7517;">✈️ Lentäjä</div><div class="role-card-desc">Kerran vuorossa: lennä mille tahansa laataalle yhdellä toiminnolla.</div></div>
+      <div class="role-card"><div class="role-card-name" style="color:#BA7517;">✈️ Lentäjä</div><div class="role-card-desc">Kerran vuorossa: lennä mille tahansa laataalle.</div></div>
     </div>
-  </div>
-  <div class="rules-block">
-    <div class="rules-h1">💀 Häviöehdot</div>
-    <ul class="rules-ul">
-      <li>Helikopterialue uppoaa</li>
-      <li>Aarteen molemmat laatatat uppoavat ennen keräämistä</li>
-      <li>Pelaaja jää loukkuun uponneelle laataalle</li>
-      <li>Vedenpinta saavuttaa 💀-tason</li>
-    </ul>
   </div>
 </div>
 
-<!-- SETUP -->
 <div id="screen-setup" class="screen">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem;">
     <button onclick="goFront()" style="font-size:11px;padding:5px 12px;border-radius:8px;border:1.5px solid #d4e9de;background:#f8fcfb;color:#4a6055;cursor:pointer;font-weight:600;">← Takaisin</button>
@@ -295,7 +262,6 @@ body,#app{background:#f0f7f4;min-height:100vh;}
   <button class="proceed-btn" id="proceed-btn" onclick="startGame()">Aloita peli! 🏝️</button>
 </div>
 
-<!-- GAME -->
 <div id="screen-game" class="screen">
   <div id="gs-header">
     <button id="back-btn" onclick="goFront()">← Etusivu</button>
@@ -310,10 +276,10 @@ body,#app{background:#f0f7f4;min-height:100vh;}
   </div>
   <div id="heli-dest-bar" class="action-bar">
     <span>🚁 Klikkaa kohdelaattaa kartalta —</span>
-    <button id="heli-dest-bar-btn" onclick="cancelHeli()" style="background:#9B8FE8;color:#fff;">Peruuta</button>
+    <button onclick="cancelHeli()" style="background:#9B8FE8;color:#fff;">Peruuta</button>
   </div>
   <div id="sand-dest-bar" class="action-bar">
-    <span>🪵 Klikkaa tulvivaa laattaa kartalta —</span>
+    <span>🪵 Klikkaa tulvivaa laattaa —</span>
     <button onclick="cancelSand()" style="background:#e8a020;color:#fff;">Peruuta</button>
   </div>
   <div id="guide-bar" class="action-bar">
@@ -323,7 +289,8 @@ body,#app{background:#f0f7f4;min-height:100vh;}
   <div id="pioneer-bar" class="action-bar">
     <span>⛏️ 1. laatta kuivattu — klikkaa toinen tai valitse muu toiminto</span>
   </div>
-  <div id="board"></div>
+  <!-- Full-width board -->
+  <div id="board-wrap"><div id="board"></div></div>
   <div id="actions">
     <button id="bm" onclick="setMode('move')">Liiku</button>
     <button id="bs" onclick="setMode('shore')">Kuivata</button>
@@ -354,10 +321,10 @@ function cardName(c){return c==='HELI'?'Helikopteri':c==='SAND'?'Hiekkasäkki':c
 const ROLES=[
   {id:0,name:"Sukeltaja",emoji:"🤿",color:"#185FA5",desc:"Liiku suoraan (ei käänny!) kaikkien peräkkäisten tulvivien läpi yhdellä toiminnolla. Vain 4 suuntaa.",special:"Sukeltaja-liike"},
   {id:1,name:"Seikkailija",emoji:"🧭",color:"#1D9E75",desc:"Liiku ja kuivaa myös diagonaalisesti (8 suuntaa).",special:null},
-  {id:2,name:"Pioneeri",emoji:"⛏️",color:"#c0392b",desc:"Kuivaa max 2 laattaa yhdellä toiminnolla. 1 laatta = 1 toiminto, 2 peräkkäin = 1 toiminto.",special:null},
-  {id:3,name:"Lähetti",emoji:"✉️",color:"#D4537E",desc:"Anna aarrekortteja kenelle tahansa saarella, 1 toiminnolla per kortti.",special:null},
+  {id:2,name:"Pioneeri",emoji:"⛏️",color:"#c0392b",desc:"Kuivaa max 2 laattaa yhdellä toiminnolla. 2 peräkkäin = 1 toiminto.",special:null},
+  {id:3,name:"Lähetti",emoji:"✉️",color:"#D4537E",desc:"Anna aarrekortteja kenelle tahansa saarella.",special:null},
   {id:4,name:"Opas",emoji:"🧿",color:"#7F77DD",desc:"Siirrä toista pelaajaa max 2 laattaa yhdellä toiminnolla.",special:"Siirrä pelaajaa"},
-  {id:5,name:"Lentäjä",emoji:"✈️",color:"#BA7517",desc:"Kerran vuorossa: lennä mille tahansa laataalle yhdellä toiminnolla.",special:"Lennä (kerran/vuoro)"},
+  {id:5,name:"Lentäjä",emoji:"✈️",color:"#BA7517",desc:"Kerran vuorossa: lennä mille tahansa laataalle.",special:"Lennä (kerran/vuoro)"},
 ];
 const TCOL={"Tuulen malja":'#c8f0e0',"Maanpallon kivi":'#fde8b0',"Tulen kristalli":'#fcd0d8',"Meren kalikka":'#c8dff8',"HELI":'#ddd0f8',"SAND":'#f0deb0'};
 const TEMOJI={"Tuulen malja":"🌬️","Maanpallon kivi":"🪨","Tulen kristalli":"🔥","Meren kalikka":"🌊","HELI":"🚁","SAND":"🪵"};
@@ -371,104 +338,42 @@ function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random
 let profiles=[],selEmoji="🧑",selColor="#378ADD";
 const EMOJIS=["🧑","👩","👨","🧔","👱","🧒","👴","👵","🦸","🧙","🧝","🧜","🏄","🤿","🧗","🚵"];
 const COLORS=["#378ADD","#D85A30","#1D9E75","#BA7517","#D4537E","#7F77DD","#5F5E5A","#639922"];
-let setupWL=3,setupHands=[],setupStarter=0,setupTDeck=[];
-let roleAssignment=[],expandedPlayer=-1;
+let setupWL=3,setupHands=[],setupStarter=0,setupTDeck=[],roleAssignment=[],expandedPlayer=-1;
 
-// *** FIX: renderFront must be called after DOM ready, addSlot uses direct onclick ***
 function renderFront(){
-  const g=document.getElementById('profiles-grid');
-  if(!g)return;
-  g.innerHTML='';
-  profiles.forEach((p,i)=>{
-    const d=document.createElement('div');
-    d.className='profile-slot filled';
-    d.style.background=p.color+'15';
-    d.style.borderColor=p.color;
-    d.style.borderWidth='2px';
-    d.style.borderStyle='solid';
-    d.innerHTML=`<div class="avatar" style="background:${p.color}30;">${p.emoji}</div><div class="profile-name">${p.name}</div><div class="profile-role-lbl">Pelaaja ${i+1}</div><span class="remove-profile" onclick="removeProfile(${i})">✕</span>`;
-    g.appendChild(d);
-  });
-  if(profiles.length<4){
-    const d=document.createElement('div');
-    d.className='profile-slot';
-    d.innerHTML=`<div class="add-btn">+</div><div class="add-label">Lisää pelaaja</div>`;
-    d.onclick=openAdd; // direct function reference
-    g.appendChild(d);
-  }
-  const sb=document.getElementById('start-btn');
-  if(sb)sb.disabled=profiles.length<2;
+  const g=document.getElementById('profiles-grid');if(!g)return;g.innerHTML='';
+  profiles.forEach((p,i)=>{const d=document.createElement('div');d.className='profile-slot filled';d.style.background=p.color+'15';d.style.borderColor=p.color;d.style.borderWidth='2px';d.style.borderStyle='solid';d.innerHTML=`<div class="avatar" style="background:${p.color}30;">${p.emoji}</div><div class="profile-name">${p.name}</div><div class="profile-role-lbl">Pelaaja ${i+1}</div><span class="remove-profile" onclick="removeProfile(${i})">✕</span>`;g.appendChild(d);});
+  if(profiles.length<4){const d=document.createElement('div');d.className='profile-slot';d.innerHTML=`<div class="add-btn">+</div><div class="add-label">Lisää pelaaja</div>`;d.onclick=openAdd;g.appendChild(d);}
+  const sb=document.getElementById('start-btn');if(sb)sb.disabled=profiles.length<2;
 }
-function openAdd(){
-  selEmoji=EMOJIS[profiles.length%EMOJIS.length];
-  selColor=COLORS[profiles.length%COLORS.length];
-  const ni=document.getElementById('name-input');
-  if(ni)ni.value='';
-  renderEP();renderCP();
-  const af=document.getElementById('add-form');
-  if(af)af.style.display='block';
-  if(ni)ni.focus();
-}
+function openAdd(){selEmoji=EMOJIS[profiles.length%EMOJIS.length];selColor=COLORS[profiles.length%COLORS.length];const ni=document.getElementById('name-input');if(ni)ni.value='';renderEP();renderCP();const af=document.getElementById('add-form');if(af)af.style.display='block';if(ni)ni.focus();}
 function cancelAdd(){const af=document.getElementById('add-form');if(af)af.style.display='none';}
 function renderEP(){const ep=document.getElementById('emoji-picker');if(!ep)return;ep.innerHTML=EMOJIS.map(e=>`<div class="ep-opt${e===selEmoji?' sel':''}" onclick="pickE('${e}')">${e}</div>`).join('');}
 function renderCP(){const cp=document.getElementById('color-picker');if(!cp)return;cp.innerHTML=COLORS.map(c=>`<div class="cp-opt${c===selColor?' sel':''}" style="background:${c};" onclick="pickC('${c}')"></div>`).join('');}
-function pickE(e){selEmoji=e;renderEP();}
-function pickC(c){selColor=c;renderCP();}
-function confirmAdd(){
-  const ni=document.getElementById('name-input');
-  const n=ni?ni.value.trim()||('Pelaaja '+(profiles.length+1)):'Pelaaja '+(profiles.length+1);
-  profiles.push({name:n,emoji:selEmoji,color:selColor});
-  cancelAdd();renderFront();
-}
+function pickE(e){selEmoji=e;renderEP();}function pickC(c){selColor=c;renderCP();}
+function confirmAdd(){const ni=document.getElementById('name-input');const n=ni?ni.value.trim()||('Pelaaja '+(profiles.length+1)):'Pelaaja '+(profiles.length+1);profiles.push({name:n,emoji:selEmoji,color:selColor});cancelAdd();renderFront();}
 function removeProfile(i){profiles.splice(i,1);renderFront();}
-function goFront(){
-  document.querySelectorAll('.screen').forEach(s=>s.className='screen');
-  document.getElementById('screen-front').className='screen active';
-  renderFront();
-}
-// Init on load
+function goFront(){document.querySelectorAll('.screen').forEach(s=>s.className='screen');document.getElementById('screen-front').className='screen active';renderFront();}
 renderFront();
 
-function makeFreshTDeck(){
-  let t=[];TLIST.forEach(x=>{for(let i=0;i<5;i++)t.push(x);});
-  for(let i=0;i<3;i++)t.push("HELI");for(let i=0;i<2;i++)t.push("SAND");
-  t=shuffle(t);
-  const minPos=Math.floor(t.length/3);const pos=[];
-  while(pos.length<3){const p=minPos+Math.floor(Math.random()*(t.length-minPos+1));if(!pos.includes(p))pos.push(p);}
-  pos.sort((a,b)=>b-a);pos.forEach(p=>t.splice(p,0,"VESI"));return t;
-}
-function goSetup(){
-  roleAssignment=profiles.map(()=>null);expandedPlayer=-1;
-  let deck=makeFreshTDeck();setupHands=profiles.map(()=>[]);
-  for(let p=0;p<profiles.length;p++){let g=0,t=0;while(g<2&&t<200){t++;if(!deck.length)break;const c=deck.shift();if(c==="VESI"){deck.push(c);deck=shuffle(deck);}else{setupHands[p].push(c);g++;}}}
-  setupTDeck=deck;setupStarter=Math.floor(Math.random()*profiles.length);setupWL=3;
-  document.querySelectorAll('.screen').forEach(s=>s.className='screen');
-  document.getElementById('screen-setup').className='screen active';
-  renderSetup();
-}
+function makeFreshTDeck(){let t=[];TLIST.forEach(x=>{for(let i=0;i<5;i++)t.push(x);});for(let i=0;i<3;i++)t.push("HELI");for(let i=0;i<2;i++)t.push("SAND");t=shuffle(t);const minPos=Math.floor(t.length/3);const pos=[];while(pos.length<3){const p=minPos+Math.floor(Math.random()*(t.length-minPos+1));if(!pos.includes(p))pos.push(p);}pos.sort((a,b)=>b-a);pos.forEach(p=>t.splice(p,0,"VESI"));return t;}
+function goSetup(){roleAssignment=profiles.map(()=>null);expandedPlayer=-1;let deck=makeFreshTDeck();setupHands=profiles.map(()=>[]);for(let p=0;p<profiles.length;p++){let g=0,t=0;while(g<2&&t<200){t++;if(!deck.length)break;const c=deck.shift();if(c==="VESI"){deck.push(c);deck=shuffle(deck);}else{setupHands[p].push(c);g++;}}}setupTDeck=deck;setupStarter=Math.floor(Math.random()*profiles.length);setupWL=3;document.querySelectorAll('.screen').forEach(s=>s.className='screen');document.getElementById('screen-setup').className='screen active';renderSetup();}
 function renderSetup(){
   const ra=document.getElementById('role-assignment');
-  ra.innerHTML=profiles.map((p,pi)=>{
-    const ar=roleAssignment[pi]!==null?ROLES.find(r=>r.id===roleAssignment[pi]):null;
-    const isOpen=expandedPlayer===pi;const takenIds=roleAssignment.filter((_,i)=>i!==pi&&roleAssignment[i]!==null);
-    const picker=isOpen?`<div class="role-pick-grid">${ROLES.map(r=>{const taken=takenIds.includes(r.id);const sel=roleAssignment[pi]===r.id;return`<div class="role-pick-card${sel?' sel':''}${taken?' taken':''}" onclick="${taken?'':'pickRole('+pi+','+r.id+')'}"><div class="role-badge-sm" style="background:${r.color}20;color:${r.color};">${r.emoji} ${r.name}</div><div class="role-pick-desc">${r.desc}</div></div>`;}).join('')}</div>`:'';
-    return`<div class="player-row"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">${p.emoji}</span><span style="font-weight:700;color:${p.color};font-size:13px;">${p.name}</span><span style="font-size:11px;color:${ar?'#1D9E75':'#6b9080'};">${ar?ar.emoji+' '+ar.name:'— ei roolia'}</span><button onclick="toggleRP(${pi})" style="margin-left:auto;font-size:10px;padding:3px 10px;border-radius:7px;border:1.5px solid #d4e9de;background:#f8fcfb;cursor:pointer;font-weight:700;">${isOpen?'Sulje ▲':'Valitse ▼'}</button></div>${picker}</div>`;
-  }).join('');
+  ra.innerHTML=profiles.map((p,pi)=>{const ar=roleAssignment[pi]!==null?ROLES.find(r=>r.id===roleAssignment[pi]):null;const isOpen=expandedPlayer===pi;const takenIds=roleAssignment.filter((_,i)=>i!==pi&&roleAssignment[i]!==null);const picker=isOpen?`<div class="role-pick-grid">${ROLES.map(r=>{const taken=takenIds.includes(r.id);const sel=roleAssignment[pi]===r.id;return`<div class="role-pick-card${sel?' sel':''}${taken?' taken':''}" onclick="${taken?'':'pickRole('+pi+','+r.id+')'}"><div class="role-badge-sm" style="background:${r.color}20;color:${r.color};">${r.emoji} ${r.name}</div><div class="role-pick-desc">${r.desc}</div></div>`;}).join('')}</div>`:'';return`<div class="player-row"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">${p.emoji}</span><span style="font-weight:700;color:${p.color};font-size:13px;">${p.name}</span><span style="font-size:11px;color:${ar?'#1D9E75':'#6b9080'};">${ar?ar.emoji+' '+ar.name:'— ei roolia'}</span><button onclick="toggleRP(${pi})" style="margin-left:auto;font-size:10px;padding:3px 10px;border-radius:7px;border:1.5px solid #d4e9de;background:#f8fcfb;cursor:pointer;font-weight:700;">${isOpen?'Sulje ▲':'Valitse ▼'}</button></div>${picker}</div>`;}).join('');
   document.getElementById('setup-hands').innerHTML=profiles.map((p,i)=>`<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span style="font-size:16px;">${p.emoji}</span><span style="font-size:12px;font-weight:700;color:${p.color};min-width:70px;">${p.name}</span><span>${setupHands[i].map(c=>`<span class="tcard" style="background:${TCOL[c]||'#eee'};color:#1a2e25;">${TEMOJI[c]||''} ${c==='HELI'?'Heli':c==='SAND'?'Hiekka':c}</span>`).join(' ')}</span></div>`).join('');
-  const wlSel=document.getElementById('wl-selector');wlSel.innerHTML='';
-  const wlD={1:"Helppo",2:"Helppo",3:"Normaali ⭐",4:"Vaikea",5:"Erittäin vaikea",6:"Eliitti",7:"Eliitti",8:"Legendaarinen",9:"Lähes mahdoton"};
+  const wlSel=document.getElementById('wl-selector');wlSel.innerHTML='';const wlD={1:"Helppo",2:"Helppo",3:"Normaali ⭐",4:"Vaikea",5:"Erittäin vaikea",6:"Eliitti",7:"Eliitti",8:"Legendaarinen",9:"Lähes mahdoton"};
   for(let i=1;i<=9;i++){const d=document.createElement('div');d.className='wl-opt'+(i===setupWL?' sel':'');d.textContent=i;d.onclick=(()=>{const l=i;return()=>{setupWL=l;renderSetup();}})();wlSel.appendChild(d);}
   const sk=document.createElement('div');sk.className='wl-opt';sk.style.pointerEvents='none';sk.textContent='💀';wlSel.appendChild(sk);
   document.getElementById('wl-desc').textContent='Taso '+setupWL+': '+(wlD[setupWL]||'')+' — '+floodCount(setupWL)+' tulvakorttia/vuoro';
-  const sp=profiles[setupStarter];
-  document.getElementById('setup-starter').innerHTML=`<div class="starter-badge"><span style="font-size:22px;">${sp.emoji}</span><span style="font-weight:700;color:${sp.color};">${sp.name}</span><span style="font-size:11px;color:#6b9080;">aloittaa</span></div><button onclick="rerollStarter()" style="margin-left:10px;font-size:11px;padding:5px 12px;border-radius:8px;border:1.5px solid #d4e9de;background:#f8fcfb;cursor:pointer;font-weight:700;">🎲 Arvo uudelleen</button>`;
+  const sp=profiles[setupStarter];document.getElementById('setup-starter').innerHTML=`<div class="starter-badge"><span style="font-size:22px;">${sp.emoji}</span><span style="font-weight:700;color:${sp.color};">${sp.name}</span><span style="font-size:11px;color:#6b9080;">aloittaa</span></div><button onclick="rerollStarter()" style="margin-left:10px;font-size:11px;padding:5px 12px;border-radius:8px;border:1.5px solid #d4e9de;background:#f8fcfb;cursor:pointer;font-weight:700;">🎲 Arvo uudelleen</button>`;
   document.getElementById('proceed-btn').disabled=!roleAssignment.every(r=>r!==null);
 }
 function toggleRP(pi){expandedPlayer=expandedPlayer===pi?-1:pi;renderSetup();}
 function pickRole(pi,rid){if(roleAssignment.findIndex((r,i)=>r===rid&&i!==pi)>=0)return;roleAssignment[pi]=rid;expandedPlayer=-1;renderSetup();}
 function rerollStarter(){setupStarter=Math.floor(Math.random()*profiles.length);renderSetup();}
 
-// ===== GAME =====
+// GAME
 let board,gPlayers,wl,fDeck,fDiscard,tDeck,tDiscard,hands,collected,acts,cur,dead,mode,logs;
 let giveCardIdx=null,giveTargetIdx=null;
 let heliMode=false,heliPlayerSel=[],heliOwner=-1,heliOwnerCardIdx=-1;
@@ -492,125 +397,28 @@ function findT(name){for(let r=0;r<6;r++)for(let c=0;c<board[r].length;c++)if(bo
 function findPos(name){for(let r=0;r<6;r++)for(let c=0;c<board[r].length;c++)if(board[r][c].name===name)return{r,c};return null;}
 function getOff(r){return(6-ROW_SIZES[r])/2;}
 function tileX(r,c){return getOff(r)+c+0.5;}
-
-function adj4(r,c){
-  const res=[];const x=tileX(r,c);
-  if(c>0&&!board[r][c-1].sunk)res.push({r,c:c-1});
-  if(c<board[r].length-1&&!board[r][c+1].sunk)res.push({r,c:c+1});
-  for(const dr of[-1,1]){const nr=r+dr;if(nr<0||nr>5)continue;for(let nc=0;nc<board[nr].length;nc++){if(board[nr][nc].sunk)continue;if(Math.abs(tileX(nr,nc)-x)<0.7)res.push({r:nr,c:nc});}}
-  return res;
-}
-function adj8(r,c){
-  const res=[...adj4(r,c)];const x=tileX(r,c);
-  for(const dr of[-1,1]){const nr=r+dr;if(nr<0||nr>5)continue;for(let nc=0;nc<board[nr].length;nc++){if(board[nr][nc].sunk)continue;const dx=Math.abs(tileX(nr,nc)-x);if(dx>=0.7&&dx<=1.8&&!res.some(a=>a.r===nr&&a.c===nc))res.push({r:nr,c:nc});}}
-  return res;
-}
-function sukelRoads(sr,sc){
-  const reachable=new Map();
-  for(const n of adj4(sr,sc))reachable.set(n.r+','+n.c,n);
-  function sn(r,c,dir){if(dir===0){if(c>0)return{r,c:c-1};return null;}if(dir===1){if(c<board[r].length-1)return{r,c:c+1};return null;}const x=tileX(r,c);const nr=dir===2?r-1:r+1;if(nr<0||nr>5)return null;for(let nc=0;nc<board[nr].length;nc++){if(Math.abs(tileX(nr,nc)-x)<0.7)return{r:nr,c:nc};}return null;}
-  for(let dir=0;dir<4;dir++){
-    let pos={r:sr,c:sc};
-    const first=sn(pos.r,pos.c,dir);if(!first)continue;
-    const ft=board[first.r][first.c];if(ft.sunk)continue;
-    if(!ft.flooded)continue;
-    pos=first;
-    while(true){const next=sn(pos.r,pos.c,dir);if(!next)break;const t=board[next.r][next.c];if(t.sunk)break;reachable.set(next.r+','+next.c,next);if(!t.flooded)break;pos=next;}
-  }
-  return[...reachable.values()];
-}
+function adj4(r,c){const res=[];const x=tileX(r,c);if(c>0&&!board[r][c-1].sunk)res.push({r,c:c-1});if(c<board[r].length-1&&!board[r][c+1].sunk)res.push({r,c:c+1});for(const dr of[-1,1]){const nr=r+dr;if(nr<0||nr>5)continue;for(let nc=0;nc<board[nr].length;nc++){if(board[nr][nc].sunk)continue;if(Math.abs(tileX(nr,nc)-x)<0.7)res.push({r:nr,c:nc});}}return res;}
+function adj8(r,c){const res=[...adj4(r,c)];const x=tileX(r,c);for(const dr of[-1,1]){const nr=r+dr;if(nr<0||nr>5)continue;for(let nc=0;nc<board[nr].length;nc++){if(board[nr][nc].sunk)continue;const dx=Math.abs(tileX(nr,nc)-x);if(dx>=0.7&&dx<=1.8&&!res.some(a=>a.r===nr&&a.c===nc))res.push({r:nr,c:nc});}}return res;}
+function sukelRoads(sr,sc){const reachable=new Map();for(const n of adj4(sr,sc))reachable.set(n.r+','+n.c,n);function sn(r,c,dir){if(dir===0){if(c>0)return{r,c:c-1};return null;}if(dir===1){if(c<board[r].length-1)return{r,c:c+1};return null;}const x=tileX(r,c);const nr=dir===2?r-1:r+1;if(nr<0||nr>5)return null;for(let nc=0;nc<board[nr].length;nc++){if(Math.abs(tileX(nr,nc)-x)<0.7)return{r:nr,c:nc};}return null;}for(let dir=0;dir<4;dir++){let pos={r:sr,c:sc};const first=sn(pos.r,pos.c,dir);if(!first)continue;const ft=board[first.r][first.c];if(ft.sunk)continue;if(!ft.flooded)continue;pos=first;while(true){const next=sn(pos.r,pos.c,dir);if(!next)break;const t=board[next.r][next.c];if(t.sunk)break;reachable.set(next.r+','+next.c,next);if(!t.flooded)break;pos=next;}}return[...reachable.values()];}
 function adjN(sr,sc,n){const vis=new Set([sr+','+sc]);let fr=[{r:sr,c:sc}];for(let i=0;i<n;i++){const nx=[];for(const{r,c}of fr){for(const nb of adj4(r,c)){const k=nb.r+','+nb.c;if(!vis.has(k)){vis.add(k);nx.push(nb);}}}fr=nx;}return[...vis].filter(k=>k!==sr+','+sc).map(k=>{const[r,c]=k.split(',').map(Number);return{r,c};});}
 function getMoveAdj(){const role=gPlayers[cur].role;const cp=gPlayers[cur];if(role.id===0)return sukelRoads(cp.r,cp.c);if(role.id===1)return adj8(cp.r,cp.c);return adj4(cp.r,cp.c);}
 function getShoreAdj(){const role=gPlayers[cur].role;const cp=gPlayers[cur];const self=[{r:cp.r,c:cp.c}];if(role.id===1)return[...adj8(cp.r,cp.c),...self];return[...adj4(cp.r,cp.c),...self];}
 function cardsInHands(){return hands.reduce((s,h)=>s+h.length,0);}
-function showEvent(msg,bg){const el=document.getElementById('event-banner');el.textContent=msg;el.style.background=bg||'linear-gradient(135deg,#0d3a5c,#1a5080)';el.className='';void el.offsetWidth;el.className='show';if(eventTimer)clearTimeout(eventTimer);eventTimer=setTimeout(()=>{el.className='';},7000);}
+function showEvent(msg){const el=document.getElementById('event-banner');el.textContent=msg;el.className='';void el.offsetWidth;el.className='show';if(eventTimer)clearTimeout(eventTimer);eventTimer=setTimeout(()=>{el.className='';},7000);}
 function handleWatersRise(){wl++;if(wl>MAX_WL){endGame(false,"Vedenpinta saavutti 💀-tason!");return false;}if(fDiscard.length>0){fDeck=[...shuffle([...fDiscard]),...fDeck];fDiscard=[];return true;}return false;}
-
-function promptDiscard(playerIdx){
-  return new Promise(resolve=>{
-    discardResolveCallback=resolve;
-    const gp=gPlayers[playerIdx];const excess=hands[playerIdx].length-HAND_LIMIT;
-    document.getElementById('discard-sub').textContent=gp.profile.emoji+' '+gp.profile.name+' — '+hands[playerIdx].length+' korttia (raja '+HAND_LIMIT+'). Hylkää '+excess+' kortti'+(excess>1?'a'
-:'')+':';
-    document.getElementById('discard-cards').innerHTML=hands[playerIdx].map((c,i)=>`<div class="discard-card" style="background:${TCOL[c]||'#eee'};color:#1a2e25;" onclick="resolveDiscard(${playerIdx},${i})">${TEMOJI[c]||''} ${cardName(c)} <span style="font-size:9px;color:#c0392b;font-weight:700;">✕</span></div>`).join('');
-    document.getElementById('discard-modal').className='modal-overlay show';render();
-  });
-}
-function resolveDiscard(playerIdx,cardIdx){
-  document.getElementById('discard-modal').className='modal-overlay';
-  const discarded=hands[playerIdx].splice(cardIdx,1)[0];
-  tDiscard.push(discarded);
-  glog(gPlayers[playerIdx].profile.name+": hylkäsi '"+cardName(discarded)+"'");
-  render();if(discardResolveCallback){discardResolveCallback();discardResolveCallback=null;}
-}
+function promptDiscard(playerIdx){return new Promise(resolve=>{discardResolveCallback=resolve;const gp=gPlayers[playerIdx];const excess=hands[playerIdx].length-HAND_LIMIT;document.getElementById('discard-sub').textContent=gp.profile.emoji+' '+gp.profile.name+' — '+hands[playerIdx].length+' korttia. Hylkää '+excess+' kortti'+(excess>1?'a':'')+':';document.getElementById('discard-cards').innerHTML=hands[playerIdx].map((c,i)=>`<div class="discard-card" style="background:${TCOL[c]||'#eee'};color:#1a2e25;" onclick="resolveDiscard(${playerIdx},${i})">${TEMOJI[c]||''} ${cardName(c)} <span style="font-size:9px;color:#c0392b;font-weight:700;">✕</span></div>`).join('');document.getElementById('discard-modal').className='modal-overlay show';render();});}
+function resolveDiscard(playerIdx,cardIdx){document.getElementById('discard-modal').className='modal-overlay';const d=hands[playerIdx].splice(cardIdx,1)[0];tDiscard.push(d);glog(gPlayers[playerIdx].profile.name+": hylkäsi '"+cardName(d)+"'");render();if(discardResolveCallback){discardResolveCallback();discardResolveCallback=null;}}
 async function resolveHandOverflow(playerIdx){while(hands[playerIdx].length>HAND_LIMIT){render();await promptDiscard(playerIdx);}}
-
-async function drawTreasureCards(p){
-  let drawn=0;
-  while(drawn<2){
-    if(!tDeck.length){if(!tDiscard.length)break;tDeck=shuffle([...tDiscard]);tDiscard=[];showEvent("🔀 Aarrekorttipakka loppui!\nPoistopino sekoitettu uudeksi pakaksi.");}
-    if(!tDeck.length)break;
-    const c=tDeck.shift();drawn++;
-    if(c==="VESI"){const did=handleWatersRise();if(dead)return;tDiscard.push(c);let msg="💧  Vesi nousee!\n\nVedenpinta: taso "+wl+"\n→ "+floodCount(wl)+" korttia/vuoro";msg+=did?"\n\n🔀  Tulvapoistopino sekoitettu\nnostopinon päälle!":"\n\nPoistopino oli tyhjä.";msg+="\n\n(Ei korvauskorttia)";showEvent(msg);glog("💧 Vesi taso "+wl+" ("+floodCount(wl)+"/vuoro).");}
-    else{hands[p].push(c);}
-  }
-  if(hands[p].length>HAND_LIMIT){await resolveHandOverflow(p);}
-}
-
-function doFlood(){
-  const cnt=floodCount(wl);
-  for(let i=0;i<cnt;i++){if(!fDeck.length){if(fDiscard.length){fDeck=shuffle([...fDiscard]);fDiscard=[];}else break;}const n=fDeck.shift();const t=findT(n);if(!t||t.sunk)continue;if(t.flooded){t.sunk=true;glog(n+" upposi!");}else{t.flooded=true;glog(n+" tulvii!");fDiscard.push(n);}}
-  fDiscard=fDiscard.filter(n=>{const t=findT(n);return t&&!t.sunk;});
-  gPlayers.forEach(p=>{const t=board[p.r][p.c];if(t&&t.sunk){const a=adj4(p.r,p.c);if(a.length){p.r=a[0].r;p.c=a[0].c;glog(p.profile.name+" pakeni!");}else endGame(false,p.profile.name+" jäi loukkuun!");}});
-  const ht=findT(HELI_TILE);if(ht&&ht.sunk)endGame(false,"Helikopterialue upposi!");
-  TLIST.forEach(tr=>{if(collected.includes(tr))return;const tiles=Object.entries(TMAP).filter(([,v])=>v===tr).map(([k])=>k);if(tiles.every(n=>{const t=findT(n);return!t||t.sunk;}))endGame(false,"Molemmat "+tr+"-laatatat upposivat!");});
-}
-
+async function drawTreasureCards(p){let drawn=0;while(drawn<2){if(!tDeck.length){if(!tDiscard.length)break;tDeck=shuffle([...tDiscard]);tDiscard=[];showEvent("🔀 Aarrekorttipakka loppui!\nPoistopino sekoitettu uudeksi pakaksi.");}if(!tDeck.length)break;const c=tDeck.shift();drawn++;if(c==="VESI"){const did=handleWatersRise();if(dead)return;tDiscard.push(c);let msg="💧  Vesi nousee!\n\nVedenpinta: taso "+wl+"\n→ "+floodCount(wl)+" korttia/vuoro";msg+=did?"\n\n🔀  Tulvapoistopino sekoitettu\nnostopinon päälle!":"\n\nPoistopino oli tyhjä.";msg+="\n\n(Ei korvauskorttia)";showEvent(msg);glog("💧 Vesi taso "+wl+" ("+floodCount(wl)+"/vuoro).");}else{hands[p].push(c);}}if(hands[p].length>HAND_LIMIT){await resolveHandOverflow(p);}}
+function doFlood(){const cnt=floodCount(wl);for(let i=0;i<cnt;i++){if(!fDeck.length){if(fDiscard.length){fDeck=shuffle([...fDiscard]);fDiscard=[];}else break;}const n=fDeck.shift();const t=findT(n);if(!t||t.sunk)continue;if(t.flooded){t.sunk=true;glog(n+" upposi!");}else{t.flooded=true;glog(n+" tulvii!");fDiscard.push(n);}}fDiscard=fDiscard.filter(n=>{const t=findT(n);return t&&!t.sunk;});gPlayers.forEach(p=>{const t=board[p.r][p.c];if(t&&t.sunk){const a=adj4(p.r,p.c);if(a.length){p.r=a[0].r;p.c=a[0].c;glog(p.profile.name+" pakeni!");}else endGame(false,p.profile.name+" jäi loukkuun!");}});const ht=findT(HELI_TILE);if(ht&&ht.sunk)endGame(false,"Helikopterialue upposi!");TLIST.forEach(tr=>{if(collected.includes(tr))return;const tiles=Object.entries(TMAP).filter(([,v])=>v===tr).map(([k])=>k);if(tiles.every(n=>{const t=findT(n);return!t||t.sunk;}))endGame(false,"Molemmat "+tr+"-laatatat upposivat!");});}
 function useAct(){acts--;if(acts<=0&&!dead)setTimeout(()=>{if(!dead&&acts<=0)endTurn();},400);render();}
-function cancelAllSpecialModes(){
-  if(heliMode){heliMode=false;heliPlayerSel=[];document.getElementById('heli-dest-bar').className='action-bar';}
-  if(sandMode){sandMode=false;sandCardOwner=-1;sandCardIdx=-1;document.getElementById('sand-dest-bar').className='action-bar';}
-  if(guideWaitingMap){guideWaitingMap=false;guideTarget=-1;document.getElementById('guide-bar').className='action-bar';}
-}
-function setMode(m){
-  if(dead||acts<=0){glog("Ei toimintoja!");return;}cancelAllSpecialModes();
-  if(pioneerShoreCount>0){pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';mode=null;useAct();if(dead||acts<=0)return;if(m==='shore'){mode='shore';render();return;}}
-  mode=mode===m?null:m;render();
-}
-function showRolePopup(){
-  if(!gPlayers)return;const gp=gPlayers[cur];const role=gp.role;
-  document.getElementById('rp-content').innerHTML=`<div style="text-align:center;margin-bottom:12px;"><div style="font-size:40px;">${role.emoji}</div><div style="font-size:18px;font-weight:700;color:${role.color};margin:6px 0;">${role.name}</div><div style="font-size:12px;color:#4a6055;line-height:1.6;">${role.desc}</div></div>${role.special?`<div style="background:${role.color}15;border:2px solid ${role.color}40;border-radius:10px;padding:8px 12px;font-size:11px;"><strong style="color:${role.color};">Erikoistoiminto:</strong> ${role.special}</div>`:''}<div style="margin-top:10px;font-size:11px;color:#4a6055;background:#f0f7f4;border-radius:8px;padding:6px 10px;">Vuorossa: <strong style="color:${gp.profile.color};">${gp.profile.name}</strong> — toimintoja: <strong>${acts}</strong>/3</div>`;
-  document.getElementById('role-popup').className='show';document.getElementById('role-popup-bg').className='show';
-}
+function cancelAllSpecialModes(){if(heliMode){heliMode=false;heliPlayerSel=[];document.getElementById('heli-dest-bar').className='action-bar';}if(sandMode){sandMode=false;sandCardOwner=-1;sandCardIdx=-1;document.getElementById('sand-dest-bar').className='action-bar';}if(guideWaitingMap){guideWaitingMap=false;guideTarget=-1;document.getElementById('guide-bar').className='action-bar';}}
+function setMode(m){if(dead||acts<=0){glog("Ei toimintoja!");return;}cancelAllSpecialModes();if(pioneerShoreCount>0){pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';mode=null;useAct();if(dead||acts<=0)return;if(m==='shore'){mode='shore';render();return;}}mode=mode===m?null:m;render();}
+function showRolePopup(){if(!gPlayers)return;const gp=gPlayers[cur];const role=gp.role;document.getElementById('rp-content').innerHTML=`<div style="text-align:center;margin-bottom:12px;"><div style="font-size:40px;">${role.emoji}</div><div style="font-size:18px;font-weight:700;color:${role.color};margin:6px 0;">${role.name}</div><div style="font-size:12px;color:#4a6055;line-height:1.6;">${role.desc}</div></div>${role.special?`<div style="background:${role.color}15;border:2px solid ${role.color}40;border-radius:10px;padding:8px 12px;font-size:11px;"><strong style="color:${role.color};">Erikoistoiminto:</strong> ${role.special}</div>`:''}<div style="margin-top:10px;font-size:11px;color:#4a6055;background:#f0f7f4;border-radius:8px;padding:6px 10px;">Vuorossa: <strong style="color:${gp.profile.color};">${gp.profile.name}</strong> — toimintoja: <strong>${acts}</strong>/3</div>`;document.getElementById('role-popup').className='show';document.getElementById('role-popup-bg').className='show';}
 function closeRolePopup(){document.getElementById('role-popup').className='';document.getElementById('role-popup-bg').className='';}
-
-function tileClick(r,c){
-  if(dead)return;const t=board[r][c];if(t.sunk)return;
-  if(heliMode){heliPlayerSel.forEach(idx=>{gPlayers[idx].r=r;gPlayers[idx].c=c;});tDiscard.push(hands[heliOwner].splice(heliOwnerCardIdx,1)[0]);glog("🚁 "+heliPlayerSel.map(i=>gPlayers[i].profile.name).join(', ')+" → "+board[r][c].name);if(collected.length===4){const hp=findPos(HELI_TILE);if(hp&&gPlayers.every(p=>p.r===hp.r&&p.c===hp.c))endGame(true,"Kaikki pakenivat helikopterilla! Voitto! 🎉");}heliMode=false;heliPlayerSel=[];document.getElementById('heli-dest-bar').className='action-bar';render();return;}
-  if(sandMode){if(!t.flooded){glog("Laatta ei ole tulviva!");return;}t.flooded=false;tDiscard.push(hands[sandCardOwner].splice(sandCardIdx,1)[0]);glog("🪵 "+gPlayers[sandCardOwner].profile.name+" kuivasi: "+t.name);sandMode=false;sandCardOwner=-1;sandCardIdx=-1;document.getElementById('sand-dest-bar').className='action-bar';render();return;}
-  if(guideWaitingMap){if(guideTarget<0)return;const reachable=adjN(gPlayers[guideTarget].r,gPlayers[guideTarget].c,2);if(!reachable.some(a=>a.r===r&&a.c===c)){glog("Liian kaukana (max 2)!");return;}gPlayers[guideTarget].r=r;gPlayers[guideTarget].c=c;glog("🧿 "+gPlayers[guideTarget].profile.name+" → "+board[r][c].name);guideWaitingMap=false;guideTarget=-1;document.getElementById('guide-bar').className='action-bar';useAct();return;}
-  if(!mode)return;
-  const cp=gPlayers[cur];const role=cp.role;
-  if(mode==='move'){const mAdj=getMoveAdj();if(mAdj.some(a=>a.r===r&&a.c===c)){cp.r=r;cp.c=c;glog(cp.profile.name+" → "+board[r][c].name);mode=null;useAct();}else glog("Ei voida liikkua sinne.");}
-  else if(mode==='shore'){if(!t.flooded){glog("Ei tulviva!");return;}const reach=getShoreAdj();if(!reach.some(a=>a.r===r&&a.c===c)){glog("Liian kaukana!");return;}if(role.id===2){t.flooded=false;glog(cp.profile.name+" kuivasi: "+t.name);if(pioneerShoreCount===0){pioneerShoreCount=1;document.getElementById('pioneer-bar').className='action-bar show';render();}else{pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';mode=null;useAct();}}else{t.flooded=false;glog(cp.profile.name+" kuivasi: "+t.name);mode=null;useAct();}}
-  else if(mode==='pilot-fly'){cp.r=r;cp.c=c;pilotUsedThisTurn=true;glog(cp.profile.name+" 🛫 → "+board[r][c].name);mode=null;useAct();}
-}
-function tryArtifact(){
-  if(dead||acts<=0){glog("Ei toimintoja!");return;}
-  if(pioneerShoreCount>0){pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';mode=null;useAct();if(dead||acts<=0)return;}
-  const cp=gPlayers[cur];const t=board[cp.r][cp.c];const tr=TMAP[t.name];
-  if(!tr){glog("Ei aarretta tällä laataalla!");return;}if(collected.includes(tr)){glog("Jo kerätty!");return;}
-  const cnt=hands[cur].filter(x=>x===tr).length;if(cnt<4){glog("Tarvitaan 4 "+TEMOJI[tr]+"-korttia! ("+cnt+"/4)");return;}
-  for(let i=0;i<4;i++){const idx=hands[cur].indexOf(tr);tDiscard.push(hands[cur].splice(idx,1)[0]);}
-  collected.push(tr);glog(cp.profile.name+" otti: "+TEMOJI[tr]+" "+tr+" 🎉");
-  if(collected.length===4)glog("Kaikki aarteet! Mene helikopterialueelle ja pelaa 🚁!");useAct();
-}
-function useSpecialAction(){
-  if(dead||acts<=0){glog("Ei toimintoja!");return;}const role=gPlayers[cur].role;
-  if(role.id===0)setMode('move');
-  else if(role.id===4)openGuideWhoModal();
-  else if(role.id===5){if(pilotUsedThisTurn){glog("Lentäjä: jo käytetty tällä vuorolla!");return;}cancelAllSpecialModes();mode='pilot-fly';render();}
-}
+function tileClick(r,c){if(dead)return;const t=board[r][c];if(t.sunk)return;if(heliMode){heliPlayerSel.forEach(idx=>{gPlayers[idx].r=r;gPlayers[idx].c=c;});tDiscard.push(hands[heliOwner].splice(heliOwnerCardIdx,1)[0]);glog("🚁 "+heliPlayerSel.map(i=>gPlayers[i].profile.name).join(', ')+" → "+board[r][c].name);if(collected.length===4){const hp=findPos(HELI_TILE);if(hp&&gPlayers.every(p=>p.r===hp.r&&p.c===hp.c))endGame(true,"Kaikki pakenivat helikopterilla! Voitto! 🎉");}heliMode=false;heliPlayerSel=[];document.getElementById('heli-dest-bar').className='action-bar';render();return;}if(sandMode){if(!t.flooded){glog("Laatta ei ole tulviva!");return;}t.flooded=false;tDiscard.push(hands[sandCardOwner].splice(sandCardIdx,1)[0]);glog("🪵 "+gPlayers[sandCardOwner].profile.name+" kuivasi: "+t.name);sandMode=false;sandCardOwner=-1;sandCardIdx=-1;document.getElementById('sand-dest-bar').className='action-bar';render();return;}if(guideWaitingMap){if(guideTarget<0)return;const reachable=adjN(gPlayers[guideTarget].r,gPlayers[guideTarget].c,2);if(!reachable.some(a=>a.r===r&&a.c===c)){glog("Liian kaukana (max 2)!");return;}gPlayers[guideTarget].r=r;gPlayers[guideTarget].c=c;glog("🧿 "+gPlayers[guideTarget].profile.name+" → "+board[r][c].name);guideWaitingMap=false;guideTarget=-1;document.getElementById('guide-bar').className='action-bar';useAct();return;}if(!mode)return;const cp=gPlayers[cur];const role=cp.role;if(mode==='move'){const mAdj=getMoveAdj();if(mAdj.some(a=>a.r===r&&a.c===c)){cp.r=r;cp.c=c;glog(cp.profile.name+" → "+board[r][c].name);mode=null;useAct();}else glog("Ei voida liikkua sinne.");}else if(mode==='shore'){if(!t.flooded){glog("Ei tulviva!");return;}const reach=getShoreAdj();if(!reach.some(a=>a.r===r&&a.c===c)){glog("Liian kaukana!");return;}if(role.id===2){t.flooded=false;glog(cp.profile.name+" kuivasi: "+t.name);if(pioneerShoreCount===0){pioneerShoreCount=1;document.getElementById('pioneer-bar').className='action-bar show';render();}else{pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';mode=null;useAct();}}else{t.flooded=false;glog(cp.profile.name+" kuivasi: "+t.name);mode=null;useAct();}}else if(mode==='pilot-fly'){cp.r=r;cp.c=c;pilotUsedThisTurn=true;glog(cp.profile.name+" 🛫 → "+board[r][c].name);mode=null;useAct();}}
+function tryArtifact(){if(dead||acts<=0){glog("Ei toimintoja!");return;}if(pioneerShoreCount>0){pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';mode=null;useAct();if(dead||acts<=0)return;}const cp=gPlayers[cur];const t=board[cp.r][cp.c];const tr=TMAP[t.name];if(!tr){glog("Ei aarretta tällä laataalla!");return;}if(collected.includes(tr)){glog("Jo kerätty!");return;}const cnt=hands[cur].filter(x=>x===tr).length;if(cnt<4){glog("Tarvitaan 4 "+TEMOJI[tr]+"-korttia! ("+cnt+"/4)");return;}for(let i=0;i<4;i++){const idx=hands[cur].indexOf(tr);tDiscard.push(hands[cur].splice(idx,1)[0]);}collected.push(tr);glog(cp.profile.name+" otti: "+TEMOJI[tr]+" "+tr+" 🎉");if(collected.length===4)glog("Kaikki aarteet! Mene helikopterialueelle ja pelaa 🚁!");useAct();}
+function useSpecialAction(){if(dead||acts<=0){glog("Ei toimintoja!");return;}const role=gPlayers[cur].role;if(role.id===0)setMode('move');else if(role.id===4)openGuideWhoModal();else if(role.id===5){if(pilotUsedThisTurn){glog("Lentäjä: jo käytetty tällä vuorolla!");return;}cancelAllSpecialModes();mode='pilot-fly';render();}}
 function playHeli(pi,ci){if(dead)return;heliOwner=pi;heliOwnerCardIdx=ci;heliPlayerSel=[];const op=gPlayers[pi];const sameTile=gPlayers.filter(p=>p.r===op.r&&p.c===op.c);document.getElementById('heli-players').innerHTML=sameTile.map(p=>{const idx=gPlayers.indexOf(p);return`<div class="modal-target" id="hp-${idx}" onclick="toggleHP(${idx})">${p.profile.emoji} ${p.profile.name}</div>`;}).join('');document.getElementById('heli-next-btn').disabled=true;document.getElementById('heli-modal').className='modal-overlay show';}
 function toggleHP(idx){if(heliPlayerSel.includes(idx))heliPlayerSel=heliPlayerSel.filter(i=>i!==idx);else heliPlayerSel.push(idx);document.querySelectorAll('[id^="hp-"]').forEach(el=>{const i=parseInt(el.id.replace('hp-',''));el.classList.toggle('sel',heliPlayerSel.includes(i));});document.getElementById('heli-next-btn').disabled=heliPlayerSel.length===0;}
 function heliPickDest(){if(!heliPlayerSel.length)return;document.getElementById('heli-modal').className='modal-overlay';heliMode=true;document.getElementById('heli-dest-bar').className='action-bar show';render();}
@@ -621,64 +429,55 @@ function openGuideWhoModal(){const others=gPlayers.filter((_,i)=>i!==cur);docume
 function selectGuideWho(idx){guideTarget=idx;document.querySelectorAll('[id^="gwt-"]').forEach(el=>el.classList.remove('sel'));document.getElementById('gwt-'+idx).classList.add('sel');document.getElementById('guide-who-btn').disabled=false;}
 function confirmGuideWho(){if(guideTarget<0)return;document.getElementById('guide-who-modal').className='modal-overlay';guideWaitingMap=true;document.getElementById('guide-bar').className='action-bar show';document.getElementById('guide-bar-text').textContent='🧿 Klikkaa mihin siirrät '+gPlayers[guideTarget].profile.name+' (max 2) —';render();}
 function cancelGuide(){guideWaitingMap=false;guideTarget=-1;document.getElementById('guide-bar').className='action-bar';document.getElementById('guide-who-modal').className='modal-overlay';render();}
-function openGiveModal(){
-  if(dead||acts<=0){glog("Ei toimintoja!");return;}
-  if(pioneerShoreCount>0){pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';mode=null;useAct();if(dead||acts<=0)return;}
-  const cp=gPlayers[cur];const role=cp.role;const isM=(role.id===3);
-  const others=isM?gPlayers.filter((_,i)=>i!==cur):gPlayers.filter((_,i)=>i!==cur&&gPlayers[i].r===cp.r&&gPlayers[i].c===cp.c);
-  if(!others.length){glog(isM?"Ei muita pelaajia!":"Ei muita samalla laataalla!");return;}
-  const giveable=hands[cur].filter(c=>c!=='HELI'&&c!=='SAND'&&c!=='VESI');if(!giveable.length){glog("Ei annettavia aarrekortteja!");return;}
-  giveCardIdx=null;giveTargetIdx=null;
-  document.getElementById('give-target-label').textContent=isM?'Kenelle (missä tahansa):':'Kenelle (samalla laataalla):';
-  document.getElementById('modal-give-cards').innerHTML=hands[cur].map((c,i)=>{if(c==='HELI'||c==='SAND'||c==='VESI')return'';return`<div class="modal-card" id="mc-${i}" style="background:${TCOL[c]||'#eee'};color:#1a2e25;" onclick="selectGiveCard(${i})">${TEMOJI[c]||''} ${c}</div>`;}).join('');
-  document.getElementById('modal-give-targets').innerHTML=others.map(p=>{const idx=gPlayers.indexOf(p);return`<div class="modal-target" id="mt-${idx}" onclick="selectGiveTarget(${idx})">${p.profile.emoji} ${p.profile.name}</div>`;}).join('');
-  if(others.length===1){giveTargetIdx=gPlayers.indexOf(others[0]);document.getElementById('mt-'+giveTargetIdx).classList.add('sel');}
-  document.getElementById('give-confirm-btn').disabled=true;document.getElementById('give-modal').className='modal-overlay show';
-}
+function openGiveModal(){if(dead||acts<=0){glog("Ei toimintoja!");return;}if(pioneerShoreCount>0){pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';mode=null;useAct();if(dead||acts<=0)return;}const cp=gPlayers[cur];const role=cp.role;const isM=(role.id===3);const others=isM?gPlayers.filter((_,i)=>i!==cur):gPlayers.filter((_,i)=>i!==cur&&gPlayers[i].r===cp.r&&gPlayers[i].c===cp.c);if(!others.length){glog(isM?"Ei muita pelaajia!":"Ei muita samalla laataalla!");return;}const giveable=hands[cur].filter(c=>c!=='HELI'&&c!=='SAND'&&c!=='VESI');if(!giveable.length){glog("Ei annettavia aarrekortteja!");return;}giveCardIdx=null;giveTargetIdx=null;document.getElementById('give-target-label').textContent=isM?'Kenelle (missä tahansa):':'Kenelle (samalla laataalla):';document.getElementById('modal-give-cards').innerHTML=hands[cur].map((c,i)=>{if(c==='HELI'||c==='SAND'||c==='VESI')return'';return`<div class="modal-card" id="mc-${i}" style="background:${TCOL[c]||'#eee'};color:#1a2e25;" onclick="selectGiveCard(${i})">${TEMOJI[c]||''} ${c}</div>`;}).join('');document.getElementById('modal-give-targets').innerHTML=others.map(p=>{const idx=gPlayers.indexOf(p);return`<div class="modal-target" id="mt-${idx}" onclick="selectGiveTarget(${idx})">${p.profile.emoji} ${p.profile.name}</div>`;}).join('');if(others.length===1){giveTargetIdx=gPlayers.indexOf(others[0]);document.getElementById('mt-'+giveTargetIdx).classList.add('sel');}document.getElementById('give-confirm-btn').disabled=true;document.getElementById('give-modal').className='modal-overlay show';}
 function selectGiveCard(i){giveCardIdx=i;document.querySelectorAll('.modal-card').forEach(el=>el.classList.remove('sel'));document.getElementById('mc-'+i).classList.add('sel');document.getElementById('give-confirm-btn').disabled=!(giveCardIdx!==null&&giveTargetIdx!==null);}
 function selectGiveTarget(i){giveTargetIdx=i;document.querySelectorAll('.modal-target').forEach(el=>el.classList.remove('sel'));document.getElementById('mt-'+i).classList.add('sel');document.getElementById('give-confirm-btn').disabled=!(giveCardIdx!==null&&giveTargetIdx!==null);}
-async function confirmGive(){
-  if(giveCardIdx===null||giveTargetIdx===null)return;
-  closeModal('give-modal');const c=hands[cur].splice(giveCardIdx,1)[0];
-  hands[giveTargetIdx].push(c);glog(gPlayers[cur].profile.name+" antoi '"+TEMOJI[c]+" "+cardName(c)+"' → "+gPlayers[giveTargetIdx].profile.name);
-  if(hands[giveTargetIdx].length>HAND_LIMIT){await resolveHandOverflow(giveTargetIdx);}
-  if(dead)return;useAct();
-}
+async function confirmGive(){if(giveCardIdx===null||giveTargetIdx===null)return;closeModal('give-modal');const c=hands[cur].splice(giveCardIdx,1)[0];hands[giveTargetIdx].push(c);glog(gPlayers[cur].profile.name+" antoi '"+TEMOJI[c]+" "+cardName(c)+"' → "+gPlayers[giveTargetIdx].profile.name);if(hands[giveTargetIdx].length>HAND_LIMIT){await resolveHandOverflow(giveTargetIdx);}if(dead)return;useAct();}
 function playSpecialCard(pi,ci){const c=hands[pi][ci];if(c==='HELI')playHeli(pi,ci);else if(c==='SAND')playSand(pi,ci);}
-
-async function endTurn(){
-  if(dead)return;
-  if(pioneerShoreCount>0){pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';acts--;}
-  acts=0;mode=null;pilotUsedThisTurn=false;pioneerShoreCount=0;cancelAllSpecialModes();
-  await drawTreasureCards(cur);if(dead)return;
-  doFlood();if(dead)return;
-  if(collected.length===4){const hp=findPos(HELI_TILE);if(hp&&gPlayers.every(p=>p.r===hp.r&&p.c===hp.c)&&hands.some(h=>h.includes('HELI')))glog("🚁 Kaikki laataalla! Pelaa helikopterikortti voittaaksesi!");}
-  cur=(cur+1)%gPlayers.length;acts=3;mode=null;pilotUsedThisTurn=false;render();showTurnBanner();
-}
-function showTurnBanner(){
-  const gp=gPlayers[cur];document.getElementById('tba').textContent=gp.profile.emoji;document.getElementById('tbn').style.color=gp.profile.color;document.getElementById('tbn').textContent=gp.profile.name+'n vuoro!';document.getElementById('tbr').textContent=gp.role.emoji+' '+gp.role.name+' — '+gp.role.desc;
-  const h=hands[cur];document.getElementById('tbcards').innerHTML=h.length?'<div style="font-size:10px;color:#6b9080;margin-bottom:4px;font-weight:600;">Käsi:</div>'+h.map(c=>`<span class="tcard" style="background:${TCOL[c]||'#eee'};color:#1a2e25;">${TEMOJI[c]||''} ${c==='HELI'?'Heli':c==='SAND'?'Hiekka':c}</span>`).join(''):'';
-  const banner=document.getElementById('turn-banner');const prog=document.getElementById('tb-progress');banner.className='show';prog.style.transition='none';prog.style.width='100%';void prog.offsetWidth;prog.style.transition='width 5s linear';prog.style.width='0%';
-  if(bannerTimer)clearTimeout(bannerTimer);bannerTimer=setTimeout(()=>{banner.className='';},5000);banner.onclick=()=>{banner.className='';if(bannerTimer)clearTimeout(bannerTimer);};
-}
+async function endTurn(){if(dead)return;if(pioneerShoreCount>0){pioneerShoreCount=0;document.getElementById('pioneer-bar').className='action-bar';acts--;}acts=0;mode=null;pilotUsedThisTurn=false;pioneerShoreCount=0;cancelAllSpecialModes();await drawTreasureCards(cur);if(dead)return;doFlood();if(dead)return;if(collected.length===4){const hp=findPos(HELI_TILE);if(hp&&gPlayers.every(p=>p.r===hp.r&&p.c===hp.c)&&hands.some(h=>h.includes('HELI')))glog("🚁 Kaikki laataalla! Pelaa helikopterikortti voittaaksesi!");}cur=(cur+1)%gPlayers.length;acts=3;mode=null;pilotUsedThisTurn=false;render();showTurnBanner();}
+function showTurnBanner(){const gp=gPlayers[cur];document.getElementById('tba').textContent=gp.profile.emoji;document.getElementById('tbn').style.color=gp.profile.color;document.getElementById('tbn').textContent=gp.profile.name+'n vuoro!';document.getElementById('tbr').textContent=gp.role.emoji+' '+gp.role.name+' — '+gp.role.desc;const h=hands[cur];document.getElementById('tbcards').innerHTML=h.length?'<div style="font-size:10px;color:#6b9080;margin-bottom:4px;font-weight:600;">Käsi:</div>'+h.map(c=>`<span class="tcard" style="background:${TCOL[c]||'#eee'};color:#1a2e25;">${TEMOJI[c]||''} ${c==='HELI'?'Heli':c==='SAND'?'Hiekka':c}</span>`).join(''):'';const banner=document.getElementById('turn-banner');const prog=document.getElementById('tb-progress');banner.className='show';prog.style.transition='none';prog.style.width='100%';void prog.offsetWidth;prog.style.transition='width 5s linear';prog.style.width='0%';if(bannerTimer)clearTimeout(bannerTimer);bannerTimer=setTimeout(()=>{banner.className='';},5000);banner.onclick=()=>{banner.className='';if(bannerTimer)clearTimeout(bannerTimer);};}
 function endGame(win,msg){dead=true;if(bannerTimer)clearTimeout(bannerTimer);document.getElementById('turn-banner').className='';document.getElementById('end-icon').textContent=win?'🎉':'💧';document.getElementById('end-title').textContent=win?'Voitto!':'Hävisitte!';document.getElementById('end-msg').textContent=msg;document.getElementById('end-overlay').className='end-overlay show';}
 function glog(m){logs.unshift(m);if(logs.length>40)logs.pop();}
 function closeModal(id){document.getElementById(id).className='modal-overlay';}
-
 function renderWL(){let h='<div class="wl-inline">';for(let i=0;i<10;i++){const lv=i+1;const isSk=i===9;const isCur=(!isSk&&wl===lv)||(isSk&&wl>MAX_WL);const isFil=!isSk&&wl>lv;let cls='wl-ball';if(isSk)cls+=' skull';else if(isCur)cls+=' current';else if(isFil)cls+=' filled';else cls+=' empty';h+=`<div class="${cls}">${BALL_LABELS[i]}</div>`;}return h+'</div>';}
 
 function render(){
   if(!board)return;
-  const el=document.getElementById('board');el.innerHTML='';
+  const boardEl=document.getElementById('board');
+  boardEl.innerHTML='';
+
+  // Calculate tile size dynamically based on actual container width
+  const wrap=document.getElementById('board-wrap');
+  const W=wrap?wrap.offsetWidth:320;
+  // 6 tiles in widest row, small gap between them
+  const GAP=4;
+  const TSIZE=Math.floor((W-(5*GAP))/6);
+
   const cp=gPlayers[cur];const role=cp.role;
   let moveAdj=[];if(mode==='move')moveAdj=getMoveAdj();else if(mode==='pilot-fly')moveAdj=board.flat().filter(t=>!t.sunk).map(t=>findPos(t.name)).filter(Boolean);
   const shoreReach=mode==='shore'?getShoreAdj():[];
   const guideReach=guideWaitingMap&&guideTarget>=0?adjN(gPlayers[guideTarget].r,gPlayers[guideTarget].c,2):[];
+
   for(let r=0;r<6;r++){
-    const row=document.createElement('div');row.className='board-row';
+    const row=document.createElement('div');
+    row.className='board-row';
+    row.style.gap=GAP+'px';
+    row.style.marginBottom=GAP+'px';
+    // Offset row so it's centred: the board fills full width at 6 tiles
+    // Rows shorter than 6 need left margin
+    const nTiles=ROW_SIZES[r];
+    const totalW=nTiles*TSIZE+(nTiles-1)*GAP;
+    const ml=(W-totalW)/2;
+    row.style.width=W+'px';
+    row.style.marginLeft='0';
+    row.style.justifyContent='center';
+
     for(let c=0;c<board[r].length;c++){
       const t=board[r][c];const div=document.createElement('div');
-      if(t.sunk){div.style.cssText='width:62px;height:62px;visibility:hidden;';row.appendChild(div);continue;}
+      if(t.sunk){
+        div.style.cssText=`width:${TSIZE}px;height:${TSIZE}px;visibility:hidden;flex-shrink:0;`;
+        row.appendChild(div);continue;
+      }
       let cls='tile '+(t.flooded?'flooded':'dry');
       const here=gPlayers.filter(p=>p.r===r&&p.c===c);if(here.length)cls+=' glow';
       if(moveAdj.some(a=>a.r===r&&a.c===c))cls+=' moveable';
@@ -686,19 +485,30 @@ function render(){
       if(sandMode&&t.flooded)cls+=' sandable';if(heliMode)cls+=' heliable';
       if(guideWaitingMap&&guideReach.some(a=>a.r===r&&a.c===c))cls+=' guide-dest';
       div.className=cls;
+      div.style.width=TSIZE+'px';
+      div.style.height=TSIZE+'px';
+      div.style.flexShrink='0';
+      div.style.borderRadius=Math.floor(TSIZE*0.12)+'px';
+
       const tr=TMAP[t.name];
-      const tbadge=tr?`<span class="treasure-badge">${collected.includes(tr)?'✅':TEMOJI[tr]}</span>`:(t.name===HELI_TILE?'<span class="treasure-badge">🚁</span>':'');
-      const fb=t.flooded?'<span class="flood-badge">💧</span>':'';
+      const tbadge=tr?`<span class="treasure-badge" style="font-size:${Math.floor(TSIZE*0.18)}px">${collected.includes(tr)?'✅':TEMOJI[tr]}</span>`:(t.name===HELI_TILE?`<span class="treasure-badge" style="font-size:${Math.floor(TSIZE*0.18)}px">🚁</span>`:'');
+      const fb=t.flooded?`<span class="flood-badge" style="font-size:${Math.floor(TSIZE*0.18)}px">💧</span>`:'';
       const nm=t.name.length>11?t.name.slice(0,10)+'…':t.name;
-      const dots=here.map(p=>`<span class="tdot" style="background:${p.profile.color};"></span>`).join('');
-      div.innerHTML=tbadge+fb+`<div class="tile-name">${nm}</div><div class="tile-dots">${dots}</div>`;
-      div.onclick=(()=>{const rr=r,cc=c;return()=>tileClick(rr,cc);})();row.appendChild(div);
+      const nameSize=Math.max(7,Math.floor(TSIZE*0.12));
+      const dotSize=Math.max(8,Math.floor(TSIZE*0.13));
+      const dots=here.map(p=>`<span class="tdot" style="width:${dotSize}px;height:${dotSize}px;background:${p.profile.color};"></span>`).join('');
+      const mtop=Math.floor(TSIZE*0.22);
+      div.innerHTML=tbadge+fb+`<div class="tile-name" style="font-size:${nameSize}px;margin-top:${mtop}px;">${nm}</div><div class="tile-dots">${dots}</div>`;
+      div.onclick=(()=>{const rr=r,cc=c;return()=>tileClick(rr,cc);})();
+      row.appendChild(div);
     }
-    el.appendChild(row);
+    boardEl.appendChild(row);
   }
+
   const p=gPlayers[cur].profile;document.getElementById('cur-avatar').textContent=p.emoji;document.getElementById('cur-name').style.color=p.color;document.getElementById('cur-name').textContent=p.name+' '+role.emoji;
   const pipsEl=document.getElementById('acts-pips');pipsEl.innerHTML='';for(let i=0;i<3;i++){const pip=document.createElement('div');pip.className='act-pip'+(i>=acts?' used':'');pipsEl.appendChild(pip);}
   const bs=document.getElementById('bspecial');if(role.special){bs.style.display='';bs.textContent=role.emoji+' '+role.special;bs.className='special-act'+(mode==='pilot-fly'?' active':'');if(role.id===5&&pilotUsedThisTurn)bs.classList.add('used-today');}else bs.style.display='none';
+
   const hudEl=document.getElementById('hud');hudEl.innerHTML='';
   gPlayers.forEach((gp,pi)=>{
     const panel=document.createElement('div');panel.className='panel';
